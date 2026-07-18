@@ -42,3 +42,6 @@ query_logs.json
 *.json
 !requirements.txt
 !runtime.txt
+# Track JSON files inside the data folder
+!5. Project Development Phase/data/
+!5. Project Development Phase/data/*.json

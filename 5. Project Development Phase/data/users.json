@@ -1,0 +1,9 @@
+[
+  {
+    "UserID": "user_default",
+    "UserName": "Demo Student",
+    "Email": "student@edugenie.ai",
+    "PasswordHash": "pbkdf2:sha256:default_hash_value_here",
+    "CreatedAt": "2026-07-06T05:14:16.261023"
+  }
+]

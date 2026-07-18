@@ -1,0 +1,604 @@
+[
+  {
+    "QueryID": "104bc8633cc34baba6dade1212c4c967",
+    "UserID": "user_default",
+    "QueryType": "summarize",
+    "QueryText": "Ai...",
+    "CreatedAt": "2026-07-06T05:36:00.250945"
+  },
+  {
+    "QueryID": "1308b7f089954dc9aa97f067ede605a6",
+    "UserID": "user_default",
+    "QueryType": "quiz",
+    "QueryText": "machine learning",
+    "CreatedAt": "2026-07-06T05:36:19.842393"
+  },
+  {
+    "QueryID": "31eaff7a42e94277a7e16d4f834fb64c",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "What is photosynthesis",
+    "CreatedAt": "2026-07-06T08:34:37.327476"
+  },
+  {
+    "QueryID": "4c6ae3947fe54808b498432f73535c42",
+    "UserID": "user_default",
+    "QueryType": "explain",
+    "QueryText": "Quantum Computing",
+    "CreatedAt": "2026-07-06T08:40:17.891944"
+  },
+  {
+    "QueryID": "ef444f9aa6f14354be6a051c3db5075c",
+    "UserID": "user_default",
+    "QueryType": "summarize",
+    "QueryText": "This is a long piece of educational note that needs a summary....",
+    "CreatedAt": "2026-07-06T08:40:17.900855"
+  },
+  {
+    "QueryID": "29100a62017f44808908688390b23aaf",
+    "UserID": "user_default",
+    "QueryType": "quiz",
+    "QueryText": "Machine Learning...",
+    "CreatedAt": "2026-07-06T08:40:17.911000"
+  },
+  {
+    "QueryID": "68a7f0022cce41d6ae3f33a24d2e8192",
+    "UserID": "user_default",
+    "QueryType": "learn",
+    "QueryText": "Cybersecurity",
+    "CreatedAt": "2026-07-06T08:40:17.924922"
+  },
+  {
+    "QueryID": "c8ac6925ec6d4bb5a2d91bf888448592",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "What is photosynthesis",
+    "CreatedAt": "2026-07-06T08:42:19.477009"
+  },
+  {
+    "QueryID": "8cf6c89dfd8043e3bcd89faaa912ff1a",
+    "UserID": "user_default",
+    "QueryType": "explain",
+    "QueryText": "Quantum Computing",
+    "CreatedAt": "2026-07-06T08:42:28.254602"
+  },
+  {
+    "QueryID": "9b9c3696659746c3a86fc65eefe51729",
+    "UserID": "user_default",
+    "QueryType": "summarize",
+    "QueryText": "This is a long piece of educational note that needs a summary....",
+    "CreatedAt": "2026-07-06T08:42:28.260123"
+  },
+  {
+    "QueryID": "b7e1515755624c0a8d7bfbf8a1555a54",
+    "UserID": "user_default",
+    "QueryType": "quiz",
+    "QueryText": "Machine Learning...",
+    "CreatedAt": "2026-07-06T08:42:28.273620"
+  },
+  {
+    "QueryID": "de52830e93574c30843c4cca77140f06",
+    "UserID": "user_default",
+    "QueryType": "learn",
+    "QueryText": "Cybersecurity",
+    "CreatedAt": "2026-07-06T08:42:28.280094"
+  },
+  {
+    "QueryID": "7db99a4ad46344ab874f53aabe25d8ea",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "why is sky blue?",
+    "CreatedAt": "2026-07-06T08:49:38.950477"
+  },
+  {
+    "QueryID": "30f2acb08f254718965f2432149d0da5",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "Why is the sky blue?",
+    "CreatedAt": "2026-07-06T08:52:24.296619"
+  },
+  {
+    "QueryID": "83f927fd34704078badd33d3081d3cc7",
+    "UserID": "user_default",
+    "QueryType": "explain",
+    "QueryText": "Photosynthesis",
+    "CreatedAt": "2026-07-06T08:52:26.271140"
+  },
+  {
+    "QueryID": "b03160b0b74d4f3da9b8ef1df9c934d9",
+    "UserID": "user_default",
+    "QueryType": "summarize",
+    "QueryText": "FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.8+ based on standard Python type hints. The key features a...",
+    "CreatedAt": "2026-07-06T08:52:26.275128"
+  },
+  {
+    "QueryID": "2c7abd73594047b58e9ea89a0a85bebe",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "What is photosynthesis",
+    "CreatedAt": "2026-07-06T09:03:25.033004"
+  },
+  {
+    "QueryID": "974ceb32a9704bd7a19df408a5f3b5c0",
+    "UserID": "user_default",
+    "QueryType": "explain",
+    "QueryText": "Quantum Computing",
+    "CreatedAt": "2026-07-06T09:03:33.985394"
+  },
+  {
+    "QueryID": "fa28d9c17b9b42b7a4a09db178f09b49",
+    "UserID": "user_default",
+    "QueryType": "summarize",
+    "QueryText": "This is a long piece of educational note that needs a summary....",
+    "CreatedAt": "2026-07-06T09:03:33.991300"
+  },
+  {
+    "QueryID": "ebe4fe9197364ce5a43d53306deee0f4",
+    "UserID": "user_default",
+    "QueryType": "quiz",
+    "QueryText": "Machine Learning...",
+    "CreatedAt": "2026-07-06T09:03:34.005992"
+  },
+  {
+    "QueryID": "1dfb8cc4628543a393e040aef6ef03de",
+    "UserID": "user_default",
+    "QueryType": "learn",
+    "QueryText": "Cybersecurity",
+    "CreatedAt": "2026-07-06T09:03:34.013450"
+  },
+  {
+    "QueryID": "ba8eae347f914f11b7decb7ca00d7d46",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "why is sky blue?",
+    "CreatedAt": "2026-07-06T09:04:49.553904"
+  },
+  {
+    "QueryID": "bf7718959abb48e1bed4fc6c04919d53",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "why is sky blue?",
+    "CreatedAt": "2026-07-06T10:48:49.615877"
+  },
+  {
+    "QueryID": "8c2df0e76e7640549318a58edad76b70",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "why is sky blue?",
+    "CreatedAt": "2026-07-06T10:48:59.425325"
+  },
+  {
+    "QueryID": "4ff51c60756e4fc3ab190527408053e6",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "why is sky blue?",
+    "CreatedAt": "2026-07-06T10:52:14.979454"
+  },
+  {
+    "QueryID": "7586355399a1459fb9196189494f1186",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "why is sky blue?",
+    "CreatedAt": "2026-07-06T10:55:11.609141"
+  },
+  {
+    "QueryID": "adb48b4dad6d47a1867ed507401231dd",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "What is photosynthesis",
+    "CreatedAt": "2026-07-06T10:56:43.225924"
+  },
+  {
+    "QueryID": "7ff1fbf6e47c40c1b48adddbabfa1426",
+    "UserID": "user_default",
+    "QueryType": "explain",
+    "QueryText": "Quantum Computing",
+    "CreatedAt": "2026-07-06T10:56:52.487235"
+  },
+  {
+    "QueryID": "75025903c7464399a0985c818c5c0264",
+    "UserID": "user_default",
+    "QueryType": "summarize",
+    "QueryText": "This is a long piece of educational note that needs a summary....",
+    "CreatedAt": "2026-07-06T10:56:53.049808"
+  },
+  {
+    "QueryID": "bee7ff2fb3bc4079bdc4cf7304b702f1",
+    "UserID": "user_default",
+    "QueryType": "quiz",
+    "QueryText": "Machine Learning...",
+    "CreatedAt": "2026-07-06T10:56:53.577655"
+  },
+  {
+    "QueryID": "f4636232f850456d885ff1601ed1ba7a",
+    "UserID": "user_default",
+    "QueryType": "learn",
+    "QueryText": "Cybersecurity",
+    "CreatedAt": "2026-07-06T10:56:54.088272"
+  },
+  {
+    "QueryID": "9ecefbed54b44e5bbb352585172b63a9",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "why is sky blue?",
+    "CreatedAt": "2026-07-06T10:58:18.125969"
+  },
+  {
+    "QueryID": "e90ffd7dada6464891bdbd951e5c709a",
+    "UserID": "user_default",
+    "QueryType": "explain",
+    "QueryText": "AI",
+    "CreatedAt": "2026-07-06T10:58:32.988635"
+  },
+  {
+    "QueryID": "aaf18a7b9eab4ce58609f9d5198ca686",
+    "UserID": "user_default",
+    "QueryType": "summarize",
+    "QueryText": "A paragraph is a distinct section of writing that groups sentences sharing a common theme, typically consisting of three to eight sentences.  It follo...",
+    "CreatedAt": "2026-07-06T10:59:10.672216"
+  },
+  {
+    "QueryID": "6b49f4960a534a1eb886756ab5018acf",
+    "UserID": "user_default",
+    "QueryType": "quiz",
+    "QueryText": "AI...",
+    "CreatedAt": "2026-07-06T10:59:19.593421"
+  },
+  {
+    "QueryID": "3fe43887fbda428087fdcd3b3ae38850",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "Why is the sky blue?",
+    "CreatedAt": "2026-07-06T11:05:03.968128"
+  },
+  {
+    "QueryID": "08dd2dc43a03420bab298300d73a1b83",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "Why is the sky blue?",
+    "CreatedAt": "2026-07-06T11:05:28.217741"
+  },
+  {
+    "QueryID": "257f8a4053304e5aa42733babbdde005",
+    "UserID": "user_default",
+    "QueryType": "explain",
+    "QueryText": "Photosynthesis",
+    "CreatedAt": "2026-07-06T11:05:37.151704"
+  },
+  {
+    "QueryID": "d91c64e234394f92bca10c9a27cda2d0",
+    "UserID": "user_default",
+    "QueryType": "summarize",
+    "QueryText": "FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.8+ based on standard Python type hints. The key features a...",
+    "CreatedAt": "2026-07-06T11:05:45.167863"
+  },
+  {
+    "QueryID": "bc2101774c8e4a65acdcc8b33b1120a8",
+    "UserID": "user_default",
+    "QueryType": "quiz",
+    "QueryText": "Solar System...",
+    "CreatedAt": "2026-07-06T11:05:49.386522"
+  },
+  {
+    "QueryID": "79dba2858e7e4202aee695f7a4480976",
+    "UserID": "user_default",
+    "QueryType": "learn",
+    "QueryText": "Data Science",
+    "CreatedAt": "2026-07-06T11:06:17.312252"
+  },
+  {
+    "QueryID": "385803c3965c45fdb456c546edc2161b",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "Why is the sky blue?",
+    "CreatedAt": "2026-07-06T11:06:26.398300"
+  },
+  {
+    "QueryID": "085f48c57d0348e7b8b2a02a56c86e3d",
+    "UserID": "user_default",
+    "QueryType": "explain",
+    "QueryText": "Photosynthesis",
+    "CreatedAt": "2026-07-06T11:06:31.869363"
+  },
+  {
+    "QueryID": "28ad74b371204d0080051b874b83c708",
+    "UserID": "user_default",
+    "QueryType": "summarize",
+    "QueryText": "FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.8+ based on standard Python type hints. The key features a...",
+    "CreatedAt": "2026-07-06T11:06:39.042673"
+  },
+  {
+    "QueryID": "0a3cd580ddfb4669a515fa5df51718e3",
+    "UserID": "user_default",
+    "QueryType": "quiz",
+    "QueryText": "Solar System...",
+    "CreatedAt": "2026-07-06T11:06:42.040707"
+  },
+  {
+    "QueryID": "30c6e091cd5c424db761787ad8d61947",
+    "UserID": "user_default",
+    "QueryType": "learn",
+    "QueryText": "Data Science",
+    "CreatedAt": "2026-07-06T11:07:08.767975"
+  },
+  {
+    "QueryID": "e86efb29dd0e465d971cb2aed3f4c4df",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "why is sky blue?",
+    "CreatedAt": "2026-07-06T11:07:23.820772"
+  },
+  {
+    "QueryID": "23456eddf59548ef92a5874c631eca97",
+    "UserID": "user_default",
+    "QueryType": "explain",
+    "QueryText": "AI",
+    "CreatedAt": "2026-07-06T11:07:54.793135"
+  },
+  {
+    "QueryID": "29b1e9710e5d41abb1d8dd5746230ae7",
+    "UserID": "user_default",
+    "QueryType": "summarize",
+    "QueryText": "A paragraph is a distinct section of writing that groups sentences sharing a common theme, typically consisting of three to eight sentences.  It follo...",
+    "CreatedAt": "2026-07-06T11:08:07.546189"
+  },
+  {
+    "QueryID": "4e4dae8bf8064b60802ba4b524a70a8f",
+    "UserID": "user_default",
+    "QueryType": "quiz",
+    "QueryText": "AI...",
+    "CreatedAt": "2026-07-06T11:08:17.237963"
+  },
+  {
+    "QueryID": "631b4bd87e18474384b84689339beb1b",
+    "UserID": "user_default",
+    "QueryType": "learn",
+    "QueryText": "DATA SCIENCE",
+    "CreatedAt": "2026-07-06T11:08:53.117939"
+  },
+  {
+    "QueryID": "31931937884544dd83a1fa13851f8e29",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "What is photosynthesis",
+    "CreatedAt": "2026-07-06T11:10:50.362442"
+  },
+  {
+    "QueryID": "bae882d57ed24b0197c875866e11b1ff",
+    "UserID": "user_default",
+    "QueryType": "explain",
+    "QueryText": "Quantum Computing",
+    "CreatedAt": "2026-07-06T11:11:02.087378"
+  },
+  {
+    "QueryID": "08442a389a5e4525860eea07220023c7",
+    "UserID": "user_default",
+    "QueryType": "summarize",
+    "QueryText": "This is a long piece of educational note that needs a summary....",
+    "CreatedAt": "2026-07-06T11:11:05.106841"
+  },
+  {
+    "QueryID": "72935fed47fa4eb2a63dc34e944913c6",
+    "UserID": "user_default",
+    "QueryType": "quiz",
+    "QueryText": "Machine Learning...",
+    "CreatedAt": "2026-07-06T11:11:10.229693"
+  },
+  {
+    "QueryID": "ad0a1d21dac04ed5ba2619ed0460ff3e",
+    "UserID": "user_default",
+    "QueryType": "learn",
+    "QueryText": "DATA SCIENCE",
+    "CreatedAt": "2026-07-06T11:12:46.291317"
+  },
+  {
+    "QueryID": "013927fde18d419aa5f060e7828abe59",
+    "UserID": "user_default",
+    "QueryType": "quiz",
+    "QueryText": "ai",
+    "CreatedAt": "2026-07-06T11:13:16.877802"
+  },
+  {
+    "QueryID": "2adfd1506752489593c60e46e7d60988",
+    "UserID": "user_default",
+    "QueryType": "quiz",
+    "QueryText": "machine learning",
+    "CreatedAt": "2026-07-06T11:13:58.529536"
+  },
+  {
+    "QueryID": "bb95493c810846b48e74051a5f119aa6",
+    "UserID": "user_default",
+    "QueryType": "quiz",
+    "QueryText": "World War II",
+    "CreatedAt": "2026-07-06T11:14:37.498323"
+  },
+  {
+    "QueryID": "e84213f8ae634ac5ac892d665ed08310",
+    "UserID": "user_default",
+    "QueryType": "summarize",
+    "QueryText": "A paragraph is a distinct section of writing that groups sentences sharing a common theme, typically consisting of three to eight sentences.  It follo...",
+    "CreatedAt": "2026-07-06T11:15:20.782183"
+  },
+  {
+    "QueryID": "52cedf06ab1a4f4bbf53f7691039a5fa",
+    "UserID": "user_default",
+    "QueryType": "explain",
+    "QueryText": "Black Holes",
+    "CreatedAt": "2026-07-06T11:15:41.595439"
+  },
+  {
+    "QueryID": "86f4f26ede2e45b3bb6f2e4f21cc8c6f",
+    "UserID": "user_default",
+    "QueryType": "learn",
+    "QueryText": "Machine Learning",
+    "CreatedAt": "2026-07-06T11:16:33.700408"
+  },
+  {
+    "QueryID": "f4699ff2ef5b49a492f01316ee7b7db6",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "What is photosynthesis",
+    "CreatedAt": "2026-07-06T11:18:27.478648"
+  },
+  {
+    "QueryID": "d7e83339f0284891ace7ffc550d4581b",
+    "UserID": "user_default",
+    "QueryType": "explain",
+    "QueryText": "Quantum Computing",
+    "CreatedAt": "2026-07-06T11:18:36.426325"
+  },
+  {
+    "QueryID": "674cbc0d3f04430885cede4c46aee985",
+    "UserID": "user_default",
+    "QueryType": "summarize",
+    "QueryText": "This is a long piece of educational note that needs a summary....",
+    "CreatedAt": "2026-07-06T11:18:36.694623"
+  },
+  {
+    "QueryID": "b013789acca841a6ab5224d0c27a8687",
+    "UserID": "user_default",
+    "QueryType": "quiz",
+    "QueryText": "Machine Learning...",
+    "CreatedAt": "2026-07-06T11:18:37.011421"
+  },
+  {
+    "QueryID": "9292bb58a5394beb835a3695c9e5865b",
+    "UserID": "user_default",
+    "QueryType": "learn",
+    "QueryText": "Cybersecurity",
+    "CreatedAt": "2026-07-06T11:18:37.308377"
+  },
+  {
+    "QueryID": "ccfa63caf7d3440c9627b2e7b62cb1cb",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "Why is the sky blue?",
+    "CreatedAt": "2026-07-06T11:19:32.708008"
+  },
+  {
+    "QueryID": "b5b3461dd73a4d5fa43fa3d8170b4032",
+    "UserID": "user_default",
+    "QueryType": "explain",
+    "QueryText": "Photosynthesis",
+    "CreatedAt": "2026-07-06T11:19:45.542186"
+  },
+  {
+    "QueryID": "a64662764a5f41638567449358bcf022",
+    "UserID": "user_default",
+    "QueryType": "summarize",
+    "QueryText": "FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.8+ based on standard Python type hints. The key features a...",
+    "CreatedAt": "2026-07-06T11:19:45.727280"
+  },
+  {
+    "QueryID": "b71951d04247431d8e4a4a9feff844cc",
+    "UserID": "user_default",
+    "QueryType": "quiz",
+    "QueryText": "Solar System...",
+    "CreatedAt": "2026-07-06T11:19:46.060456"
+  },
+  {
+    "QueryID": "cf99fe98a9ec491b854cdb0bee92db19",
+    "UserID": "user_default",
+    "QueryType": "learn",
+    "QueryText": "Data Science",
+    "CreatedAt": "2026-07-06T11:19:46.493156"
+  },
+  {
+    "QueryID": "68302d0caa2c4e4eb391283996f0db56",
+    "UserID": "user_default",
+    "QueryType": "learn",
+    "QueryText": "Machine Learning",
+    "CreatedAt": "2026-07-06T11:20:17.786099"
+  },
+  {
+    "QueryID": "b39e00a77de94f1696f37f5e4d9a3d58",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "Explain quantum computing in simple terms",
+    "CreatedAt": "2026-07-06T11:22:38.805096"
+  },
+  {
+    "QueryID": "57f07af74eb34246a24e9b9f3e89cee8",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "why is sky blue?",
+    "CreatedAt": "2026-07-06T11:23:05.394160"
+  },
+  {
+    "QueryID": "d029aaba00c044588f2392eff4117ad1",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "What is photosynthesis",
+    "CreatedAt": "2026-07-06T11:24:57.318947"
+  },
+  {
+    "QueryID": "0295958d88194878bb2c84addc65ed04",
+    "UserID": "user_default",
+    "QueryType": "explain",
+    "QueryText": "Quantum Computing",
+    "CreatedAt": "2026-07-06T11:25:08.118200"
+  },
+  {
+    "QueryID": "a9732d868a3749518365b28a781985a0",
+    "UserID": "user_default",
+    "QueryType": "summarize",
+    "QueryText": "This is a long piece of educational note that needs a summary....",
+    "CreatedAt": "2026-07-06T11:25:08.509240"
+  },
+  {
+    "QueryID": "4099f3ab84e7426fb3c543e8ab54474e",
+    "UserID": "user_default",
+    "QueryType": "quiz",
+    "QueryText": "Machine Learning...",
+    "CreatedAt": "2026-07-06T11:25:08.720202"
+  },
+  {
+    "QueryID": "f2f018721e03451faeb453202ea33d8a",
+    "UserID": "user_default",
+    "QueryType": "learn",
+    "QueryText": "Cybersecurity",
+    "CreatedAt": "2026-07-06T11:25:09.051055"
+  },
+  {
+    "QueryID": "f1a5d69940834409a735705552672c37",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "why is sky blue?",
+    "CreatedAt": "2026-07-06T15:34:00.206575"
+  },
+  {
+    "QueryID": "8155cd0b34054443bba9ffdc23c1e9d1",
+    "UserID": "user_default",
+    "QueryType": "qa",
+    "QueryText": "What is photosynthesis",
+    "CreatedAt": "2026-07-11T08:48:28.637613"
+  },
+  {
+    "QueryID": "42e39d7447e94a549cfe3f845ed27bfd",
+    "UserID": "user_default",
+    "QueryType": "explain",
+    "QueryText": "Quantum Computing",
+    "CreatedAt": "2026-07-11T08:48:54.984103"
+  },
+  {
+    "QueryID": "c93db65f29274896a38b61531286cc38",
+    "UserID": "user_default",
+    "QueryType": "summarize",
+    "QueryText": "This is a long piece of educational note that needs a summary....",
+    "CreatedAt": "2026-07-11T08:49:02.399746"
+  },
+  {
+    "QueryID": "b15f7dd680194904b121d907fe64b40c",
+    "UserID": "user_default",
+    "QueryType": "quiz",
+    "QueryText": "Machine Learning...",
+    "CreatedAt": "2026-07-11T08:49:08.521881"
+  },
+  {
+    "QueryID": "7b4c747a8c834039bbdc659ae4bc8228",
+    "UserID": "user_default",
+    "QueryType": "learn",
+    "QueryText": "Cybersecurity",
+    "CreatedAt": "2026-07-11T08:49:33.892852"
+  }
+]

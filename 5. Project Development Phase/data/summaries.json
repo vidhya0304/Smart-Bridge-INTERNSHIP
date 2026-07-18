@@ -1,0 +1,130 @@
+[
+  {
+    "SummaryID": "c804953bc4a846458bc56559c19d19ca",
+    "QueryID": "104bc8633cc34baba6dade1212c4c967",
+    "OriginalText": "Ai",
+    "SummaryText": "This is a demo summary of your pasted note. (Pasted length: 2 characters). To enable real summaries, insert your Gemini API Key in the '.env' file.",
+    "ModelUsed": "Gemini",
+    "CreatedAt": "2026-07-06T05:36:00.265445"
+  },
+  {
+    "SummaryID": "15958a468e8b480eb9fbba9a08e10f0c",
+    "QueryID": "ef444f9aa6f14354be6a051c3db5075c",
+    "OriginalText": "This is a long piece of educational note that needs a summary.",
+    "SummaryText": "\u26a0\ufe0f Error in Summary: get_mock_summary() takes 2 positional arguments but 3 were given",
+    "ModelUsed": "Gemini",
+    "CreatedAt": "2026-07-06T08:40:17.903759"
+  },
+  {
+    "SummaryID": "ba44b04b6f5346eead94acd432213c81",
+    "QueryID": "9b9c3696659746c3a86fc65eefe51729",
+    "OriginalText": "This is a long piece of educational note that needs a summary.",
+    "SummaryText": "\u26a0\ufe0f Error in Summary: get_mock_summary() takes 2 positional arguments but 3 were given",
+    "ModelUsed": "Gemini",
+    "CreatedAt": "2026-07-06T08:42:28.261518"
+  },
+  {
+    "SummaryID": "4d5952106df346b198ad92253a20827c",
+    "QueryID": "b03160b0b74d4f3da9b8ef1df9c934d9",
+    "OriginalText": "FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.8+ based on standard Python type hints. The key features are: Fast (very high performance), Fast to code (increases coding speed), Fewer bugs (reduces developer-induced errors), Intuitive, Easy, Short, and Robust (ready for production).",
+    "SummaryText": "\u26a0\ufe0f Error in Summary: get_mock_summary() takes 2 positional arguments but 3 were given",
+    "ModelUsed": "Gemini",
+    "CreatedAt": "2026-07-06T08:52:26.276355"
+  },
+  {
+    "SummaryID": "e122fff5560446dc9b914af0516adeea",
+    "QueryID": "fa28d9c17b9b42b7a4a09db178f09b49",
+    "OriginalText": "This is a long piece of educational note that needs a summary.",
+    "SummaryText": "This is a demo summary of your pasted note. (Pasted length: 62 characters). To enable real summaries, insert your Gemini API Key in the '.env' file.",
+    "ModelUsed": "Gemini",
+    "CreatedAt": "2026-07-06T09:03:33.993399"
+  },
+  {
+    "SummaryID": "d6ce2a3776844c548dd0c907408aecbe",
+    "QueryID": "75025903c7464399a0985c818c5c0264",
+    "OriginalText": "This is a long piece of educational note that needs a summary.",
+    "SummaryText": "\u26a0\ufe0f Error in Summary: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.",
+    "ModelUsed": "Gemini",
+    "CreatedAt": "2026-07-06T10:56:53.053717"
+  },
+  {
+    "SummaryID": "ded14e74da94453b93c96f16eef0d508",
+    "QueryID": "aaf18a7b9eab4ce58609f9d5198ca686",
+    "OriginalText": "A paragraph is a distinct section of writing that groups sentences sharing a common theme, typically consisting of three to eight sentences.  It follows a clear structure: a topic sentence introduces the main idea, supporting sentences provide details or evidence, and a concluding sentence summarizes or closes the thought.  There are four primary types of paragraphs: narrative (telling a story), descriptive (painting a picture with words), expository (explaining or informing), and argumentative (persuading with a specific stance).",
+    "SummaryText": "\u26a0\ufe0f Error in Summary: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.",
+    "ModelUsed": "Gemini",
+    "CreatedAt": "2026-07-06T10:59:10.677134"
+  },
+  {
+    "SummaryID": "b1cec1675ec74b74b4922b46c2e8fbc2",
+    "QueryID": "d91c64e234394f92bca10c9a27cda2d0",
+    "OriginalText": "FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.8+ based on standard Python type hints. The key features are: Fast (very high performance), Fast to code (increases coding speed), Fewer bugs (reduces developer-induced errors), Intuitive, Easy, Short, and Robust (ready for production).",
+    "SummaryText": "FastAPI is a modern, very fast set of tools (a 'web framework') that helps Python programmers quickly build APIs. APIs are like connectors that let different computer programs or apps talk to each other.\n\nKey benefits of FastAPI include:\n*   It's **extremely fast** (high-performance).\n*   It helps you **write code quickly**, saving time.\n*   It helps **reduce errors**, leading to fewer bugs.\n*   It's **intuitive, easy to use, and robust** enough for real-world applications.",
+    "ModelUsed": "Gemini",
+    "CreatedAt": "2026-07-06T11:05:45.172436"
+  },
+  {
+    "SummaryID": "a600b053442f4ba98cbcd233d5b3a1d0",
+    "QueryID": "28ad74b371204d0080051b874b83c708",
+    "OriginalText": "FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.8+ based on standard Python type hints. The key features are: Fast (very high performance), Fast to code (increases coding speed), Fewer bugs (reduces developer-induced errors), Intuitive, Easy, Short, and Robust (ready for production).",
+    "SummaryText": "FastAPI is a modern and very fast tool (a \"web framework\") for building APIs using Python (version 3.8 and newer).\n\nIt's designed to be extremely high-performing itself, and it also helps developers write code quickly and easily, with fewer mistakes. It's user-friendly and robust, meaning it's reliable and ready for real-world projects.",
+    "ModelUsed": "Gemini",
+    "CreatedAt": "2026-07-06T11:06:39.045973"
+  },
+  {
+    "SummaryID": "1d95b050f7ff4d9aa91d839322af5807",
+    "QueryID": "29b1e9710e5d41abb1d8dd5746230ae7",
+    "OriginalText": "A paragraph is a distinct section of writing that groups sentences sharing a common theme, typically consisting of three to eight sentences.  It follows a clear structure: a topic sentence introduces the main idea, supporting sentences provide details or evidence, and a concluding sentence summarizes or closes the thought.  There are four primary types of paragraphs: narrative (telling a story), descriptive (painting a picture with words), expository (explaining or informing), and argumentative (persuading with a specific stance).",
+    "SummaryText": "A paragraph is a group of sentences, usually 3 to 8 long, that all talk about one main idea. It typically starts with a sentence introducing the main idea, followed by sentences that add details, and finishes with a sentence that wraps up the thought. There are four main kinds of paragraphs: one that tells a story, one that describes something, one that explains something, and one that tries to convince you of a point.",
+    "ModelUsed": "Gemini",
+    "CreatedAt": "2026-07-06T11:08:07.553690"
+  },
+  {
+    "SummaryID": "e971f847260840519748423373e6eb23",
+    "QueryID": "08442a389a5e4525860eea07220023c7",
+    "OriginalText": "This is a long piece of educational note that needs a summary.",
+    "SummaryText": "It looks like the text you'd like me to summarize is missing!\n\nPlease paste or type the long piece of educational note here, and I'll be happy to summarize it for you in simple language.",
+    "ModelUsed": "Gemini",
+    "CreatedAt": "2026-07-06T11:11:05.110197"
+  },
+  {
+    "SummaryID": "a931ab61813d4dd78800b2a17286272d",
+    "QueryID": "e84213f8ae634ac5ac892d665ed08310",
+    "OriginalText": "A paragraph is a distinct section of writing that groups sentences sharing a common theme, typically consisting of three to eight sentences.  It follows a clear structure: a topic sentence introduces the main idea, supporting sentences provide details or evidence, and a concluding sentence summarizes or closes the thought.  There are four primary types of paragraphs: narrative (telling a story), descriptive (painting a picture with words), expository (explaining or informing), and argumentative (persuading with a specific stance).",
+    "SummaryText": "\u26a0\ufe0f Error in Summary: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 38.376437891s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 38\n}\n]",
+    "ModelUsed": "Gemini",
+    "CreatedAt": "2026-07-06T11:15:21.124206"
+  },
+  {
+    "SummaryID": "5c09f1cf73be43df80b9e6f73ae37b70",
+    "QueryID": "674cbc0d3f04430885cede4c46aee985",
+    "OriginalText": "This is a long piece of educational note that needs a summary.",
+    "SummaryText": "\u26a0\ufe0f Error in Summary: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 22.734283727s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 22\n}\n]",
+    "ModelUsed": "Gemini",
+    "CreatedAt": "2026-07-06T11:18:36.698953"
+  },
+  {
+    "SummaryID": "a96ab543a78444ea980e5f68888b905a",
+    "QueryID": "a64662764a5f41638567449358bcf022",
+    "OriginalText": "FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.8+ based on standard Python type hints. The key features are: Fast (very high performance), Fast to code (increases coding speed), Fewer bugs (reduces developer-induced errors), Intuitive, Easy, Short, and Robust (ready for production).",
+    "SummaryText": "\u26a0\ufe0f Error in Summary: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 13.648227368s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 13\n}\n]",
+    "ModelUsed": "Gemini",
+    "CreatedAt": "2026-07-06T11:19:45.734114"
+  },
+  {
+    "SummaryID": "a1fb834de1824086b3b1d73035af30d3",
+    "QueryID": "a9732d868a3749518365b28a781985a0",
+    "OriginalText": "This is a long piece of educational note that needs a summary.",
+    "SummaryText": "\u26a0\ufe0f Error in Summary: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 50.865582918s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 50\n}\n]",
+    "ModelUsed": "Gemini",
+    "CreatedAt": "2026-07-06T11:25:08.515830"
+  },
+  {
+    "SummaryID": "4fc74f387447415b91bc216d3b7a1d13",
+    "QueryID": "c93db65f29274896a38b61531286cc38",
+    "OriginalText": "This is a long piece of educational note that needs a summary.",
+    "SummaryText": "To summarize a long piece of educational note in simple language, I would first need to see the text itself!\n\nOnce you provide the note, I will focus on:\n\n1.  **Identifying the main topic:** What is the core subject or primary message the note wants to convey?\n2.  **Extracting key concepts:** What are the most important ideas, terms, or theories explained?\n3.  **Outlining the main arguments or steps:** If it's explaining a process or making a case, what are the essential points or stages?\n4.  **Translating complex language:** Breaking down any jargon, technical terms, or complicated sentences into everyday words.\n5.  **Condensing information:** Removing examples, detailed explanations, and repetition to get straight to the point.\n\nThen, I will synthesize these elements into a brief, easy-to-understand summary that captures the essence of the educational note without requiring prior knowledge of the subject.\n\nPlease go ahead and paste the text whenever you're ready!",
+    "ModelUsed": "Gemini",
+    "CreatedAt": "2026-07-11T08:49:02.407214"
+  }
+]
