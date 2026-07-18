@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - EduGenie AI{% endblock %}
+
+{% block content %}
+<div style="max-width: 900px; margin: 0 auto 5rem auto; padding-top: 2rem;">
+    <!-- Brand Header -->
+    <div style="text-align: center; margin-bottom: 4rem;">
+        <i class="fas fa-graduation-cap" style="font-size: 5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+        <h1 style="font-size: 2.75rem; font-weight: 800; margin-bottom: 0.5rem;">About EduGenie</h1>
+        <p style="color: var(--text-muted); font-size: 1.15rem;">Intelligent study companion powered by state-of-the-art AI systems</p>
+    </div>
+
+    <!-- Mission Panel -->
+    <div class="glass-panel" style="padding: 2.5rem; margin-bottom: 3rem;">
+        <h2 style="font-weight: 800; font-size: 1.75rem; margin-bottom: 1rem; color: var(--primary);">Our Mission</h2>
+        <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main);">
+            At EduGenie, we believe that education should be personalized, interactive, and accessible. Our goal is to empower students and lifelong learners around the globe by providing an intelligent companion that can adapt complex concepts to their level of understanding, test their progress dynamically, and outline personalized paths to mastery.
+        </p>
+    </div>
+
+    <!-- Tech Architecture section -->
+    <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+        <!-- Card 1 -->
+        <div class="glass-panel" style="padding: 2rem;">
+            <div style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-cloud"></i></div>
+            <h3 style="font-weight: 700; margin-bottom: 0.75rem;">Cloud Cognitive Layer</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">
+                Integrates with Google Gemini API models to run advanced prompt engineering pipelines, generating structured JSON outputs for quizzes, roadmaps, explanations, and replies.
+            </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-panel" style="padding: 2rem;">
+            <div style="font-size: 2rem; color: #10b981; margin-bottom: 1rem;"><i class="fas fa-microchip"></i></div>
+            <h3 style="font-weight: 700; margin-bottom: 0.75rem;">Local Execution</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">
+                Leverages local Hugging Face Transformers. Utilizes LaMini-Flan-T5 models running natively in PyTorch on the host server to support offline text summarization.
+            </p>
+        </div>
+    </div>
+
+    <!-- Team section -->
+    <div class="glass-panel" style="padding: 2.5rem; text-align: center;">
+        <h2 style="font-weight: 800; font-size: 1.5rem; margin-bottom: 1rem;">Join the Community</h2>
+        <p style="font-size: 0.95rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem auto;">
+            EduGenie is open-source. Help us expand our local NLP educational models, add more subject paths, and build new question-answering features.
+        </p>
+        <a href="https://github.com" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> Star on GitHub</a>
+    </div>
+</div>
+{% endblock %}

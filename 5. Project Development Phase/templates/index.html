@@ -1,0 +1,980 @@
+{% extends "base.html" %}
+
+{% block title %}EduGenie AI - Single-Page Educational Assistant{% endblock %}
+
+{% block content %}
+<div id="spa-container">
+
+    <!-- Workspace Tab Dashboard -->
+    <div class="dashboard-tabs glass-panel" style="padding: 0.75rem; margin-bottom: 2rem; display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; border-radius: var(--radius-md);">
+        <button class="tab-btn btn-tab-overview" data-href="/" onclick="navigateSPA('/')"><i class="fas fa-grip"></i> Overview</button>
+        <button class="tab-btn btn-tab-chat" data-href="/chat" onclick="navigateSPA('/chat')"><i class="fas fa-message"></i> AI Chat</button>
+        <button class="tab-btn btn-tab-quiz" data-href="/quiz" onclick="navigateSPA('/quiz')"><i class="fas fa-clipboard-question"></i> AI Quiz</button>
+        <button class="tab-btn btn-tab-explain" data-href="/explain" onclick="navigateSPA('/explain')"><i class="fas fa-lightbulb"></i> Explainer</button>
+        <button class="tab-btn btn-tab-summary" data-href="/summary" onclick="navigateSPA('/summary')"><i class="fas fa-file-invoice"></i> Summarizer</button>
+        <button class="tab-btn btn-tab-recommend" data-href="/recommend" onclick="navigateSPA('/recommend')"><i class="fas fa-route"></i> Roadmaps</button>
+    </div>
+
+    <!-- 0. Home Section -->
+    <div id="home-section" class="spa-section">
+        <div style="text-align: center; margin-bottom: 3rem; animation: fadeIn 1s ease-out;">
+            <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Welcome to EduGenie 🧠✨</h1>
+            <p style="color: var(--text-muted); font-size: 1.1rem;">Your personal AI tutor for learning support!</p>
+        </div>
+
+        <!-- Responsive Grid Dashboard of Forms -->
+        <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+            
+            <!-- 1. Q&A Form Card -->
+            <div class="glass-panel" style="padding: 2rem; border-radius: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div class="feature-icon" style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; width: 50px; height: 50px; border-radius: 12px; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; margin-bottom: 1rem;">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <form id="qaForm">
+                        <label style="font-size: 1.1rem; display: block; margin-bottom: 0.5rem;"><strong>Ask EduGenie a Question:</strong></label>
+                        <input type="text" id="question" class="form-control" placeholder="Why is the sky blue?" required style="margin-bottom: 1rem;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.8rem; font-weight: bold;">Get Answer</button>
+                    </form>
+                </div>
+                <div id="qaResult" class="output" style="margin-top: 1.5rem; max-height: 250px; overflow-y: auto; padding: 1rem; border-radius: 8px; background: rgba(0,0,0,0.2); font-size: 0.9rem; line-height: 1.5; display: none;"></div>
+                <div style="margin-top: 1.5rem; text-align: center; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                    <a href="/chat" style="color: var(--primary); font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition);">
+                        Open AI Chat Workspace <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 2. Explanation Form Card -->
+            <div class="glass-panel" style="padding: 2rem; border-radius: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div class="feature-icon" style="background: rgba(167, 139, 250, 0.1); color: #a78bfa; width: 50px; height: 50px; border-radius: 12px; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; margin-bottom: 1rem;">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <form id="explainForm">
+                        <label style="font-size: 1.1rem; display: block; margin-bottom: 0.5rem;"><strong>Need an Explanation?</strong></label>
+                        <input type="text" id="topic" class="form-control" placeholder="Photosynthesis" required style="margin-bottom: 1rem;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.8rem; font-weight: bold; background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);">Explain</button>
+                    </form>
+                </div>
+                <div id="explanationResult" class="output" style="margin-top: 1.5rem; max-height: 250px; overflow-y: auto; padding: 1rem; border-radius: 8px; background: rgba(0,0,0,0.2); font-size: 0.9rem; line-height: 1.5; display: none;"></div>
+                <div style="margin-top: 1.5rem; text-align: center; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                    <a href="/explain" style="color: #7c3aed; font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition);">
+                        Open Explainer Workspace <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 3. Summary Form Card -->
+            <div class="glass-panel" style="padding: 2rem; border-radius: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div class="feature-icon" style="background: rgba(236, 72, 153, 0.1); color: #ec4899; width: 50px; height: 50px; border-radius: 12px; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; margin-bottom: 1rem;">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <form id="summaryForm">
+                        <label style="font-size: 1.1rem; display: block; margin-bottom: 0.5rem;"><strong>Summarize a Paragraph:</strong></label>
+                        <input type="text" id="summaryText" class="form-control" placeholder="Paste long content to summarize" required style="margin-bottom: 1rem;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.8rem; font-weight: bold; background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);">Summarize</button>
+                    </form>
+                </div>
+                <div id="summaryResult" class="output" style="margin-top: 1.5rem; max-height: 250px; overflow-y: auto; padding: 1rem; border-radius: 8px; background: rgba(0,0,0,0.2); font-size: 0.9rem; line-height: 1.5; display: none;"></div>
+                <div style="margin-top: 1.5rem; text-align: center; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                    <a href="/summary" style="color: #ec4899; font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition);">
+                        Open Summarizer Workspace <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 4. Quiz Form Card -->
+            <div class="glass-panel" style="padding: 2rem; border-radius: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div class="feature-icon" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b; width: 50px; height: 50px; border-radius: 12px; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; margin-bottom: 1rem;">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <form id="quizForm">
+                        <label style="font-size: 1.1rem; display: block; margin-bottom: 0.5rem;"><strong>Generate a Quiz:</strong></label>
+                        <input type="text" id="quizText" class="form-control" placeholder="Solar System" required style="margin-bottom: 1rem;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.8rem; font-weight: bold; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">Generate Quiz</button>
+                    </form>
+                </div>
+                <div id="quizResult" class="output" style="margin-top: 1.5rem; max-height: 250px; overflow-y: auto; padding: 1rem; border-radius: 8px; background: rgba(0,0,0,0.2); font-size: 0.9rem; line-height: 1.5; display: none;"></div>
+                <div style="margin-top: 1.5rem; text-align: center; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                    <a href="/quiz" style="color: #f59e0b; font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition);">
+                        Open Quiz Workspace <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 5. Learning Recommendations Form Card -->
+            <div class="glass-panel" style="padding: 2rem; border-radius: 16px; display: flex; flex-direction: column; justify-content: space-between; grid-column: span 1;">
+                <div>
+                    <div class="feature-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981; width: 50px; height: 50px; border-radius: 12px; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; margin-bottom: 1rem;">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <form id="recommendForm">
+                        <label style="font-size: 1.1rem; display: block; margin-bottom: 0.5rem;"><strong>Generate a Learning Path:</strong></label>
+                        <input type="text" id="recommendTopic" class="form-control" placeholder="Data Science" required style="margin-bottom: 1rem;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.8rem; font-weight: bold; background: linear-gradient(135deg, #10b981 0%, #059669 100%);">Generate Roadmap</button>
+                    </form>
+                </div>
+                <div id="recommendationResult" class="output" style="margin-top: 1.5rem; max-height: 250px; overflow-y: auto; padding: 1rem; border-radius: 8px; background: rgba(0,0,0,0.2); font-size: 0.9rem; line-height: 1.5; display: none;"></div>
+                <div style="margin-top: 1.5rem; text-align: center; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                    <a href="/recommend" style="color: #10b981; font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition);">
+                        Open Roadmap Workspace <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 1. Chat Section -->
+    <div id="chat-section" class="spa-section" style="display: none;">
+        <div class="dashboard-layout">
+            <!-- Left Sidebar -->
+            <div class="workspace-sidebar glass-panel">
+                <h3 style="font-weight: 700; margin-bottom: 1rem;"><i class="fas fa-graduation-cap"></i> AI Chat Guide</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                    EduGenie AI Chat answers complex educational questions. It delivers structured responses including a direct answer, deep explanation, practical examples, and key bullet points.
+                </p>
+                
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <div class="sidebar-nav-item active"><i class="fas fa-message"></i> Active Chat</div>
+                    <button id="clearChatBtn" class="btn btn-secondary btn-sm" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fas fa-trash-can"></i> Clear History</button>
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                    <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.75rem;">Suggested Topics</h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="suggested-tag" onclick="useSuggestedTopic('Explain quantum computing in simple terms')">Quantum Computing</span>
+                        <span class="suggested-tag" onclick="useSuggestedTopic('How does photosynthesis work step-by-step?')">Photosynthesis</span>
+                        <span class="suggested-tag" onclick="useSuggestedTopic('Why did the Roman Empire collapse?')">Roman Empire</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Chat Workspace -->
+            <div class="main-workspace glass-panel">
+                <div class="chat-container">
+                    <div class="workspace-header">
+                        <h2>AI Study Assistant</h2>
+                        <p>Ask any educational question and get structured, multi-part answers</p>
+                    </div>
+                    
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- System intro message -->
+                        <div class="chat-message message-assistant">
+                            <p>Hello! I am EduGenie, your personal tutor. Ask me any question about mathematics, science, history, coding, or language. I will break down the answer into structured conceptual segments!</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Chat input area -->
+                    <div class="chat-input-area">
+                        <textarea id="chatInput" class="chat-input" placeholder="Type your educational question here... (e.g. How does recursion work?)"></textarea>
+                        <button id="sendBtn" class="btn btn-primary" style="height: 48px; padding: 0 1.5rem;"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Recommendation/Action Panel -->
+            <div class="right-panel glass-panel">
+                <h3 style="font-weight: 700;"><i class="fas fa-gear"></i> Actions</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Manage your active response data.</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <button id="copyBtn" class="btn btn-secondary w-full" disabled><i class="fas fa-copy"></i> Copy Last Response</button>
+                    <button id="downloadBtn" class="btn btn-secondary w-full" disabled><i class="fas fa-download"></i> Download Response</button>
+                </div>
+                
+                <div style="margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+                    <h4 style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem;">Study Metrics</h4>
+                    <div style="font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-muted);">
+                        <div class="flex-row-between"><span>Active Messages:</span><span id="metricCount">1</span></div>
+                        <div class="flex-row-between"><span>Character Count:</span><span id="charCount">0</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Quiz Section -->
+    <div id="quiz-section" class="spa-section" style="display: none;">
+        <div class="dashboard-layout">
+            <!-- Left Sidebar: Settings -->
+            <div class="workspace-sidebar glass-panel">
+                <h3 style="font-weight: 700; margin-bottom: 1rem;"><i class="fas fa-clipboard-question"></i> Quiz Setup</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                    Configure your AI-generated multiple-choice questions.
+                </p>
+                
+                <div class="input-group">
+                    <label for="numQuestions">Number of Questions</label>
+                    <select id="numQuestions" class="form-control">
+                        <option value="5">5 Questions</option>
+                        <option value="10" selected>10 Questions</option>
+                        <option value="15">15 Questions</option>
+                    </select>
+                </div>
+
+                <div class="input-group" style="flex-direction: row; align-items: center; justify-content: space-between; gap: 1rem;">
+                    <label for="quizUseLocalT5" style="margin-bottom: 0; cursor: pointer;">
+                        <strong>Local T5 Model</strong><br>
+                        <span style="font-size: 0.75rem; font-weight: normal; color: var(--text-muted);">Run offline using CPU/GPU T5 model</span>
+                    </label>
+                    <input type="checkbox" id="quizUseLocalT5" style="width: 20px; height: 20px; cursor: pointer;">
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                    <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.75rem;">Sample Topics</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <button class="btn btn-secondary btn-sm" onclick="setTopic('World War II')">World War II</button>
+                        <button class="btn btn-secondary btn-sm" onclick="setTopic('Cellular Respiration')">Cellular Biology</button>
+                        <button class="btn btn-secondary btn-sm" onclick="setTopic('Python Lists and Loops')">Python Coding</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Workspace -->
+            <div class="main-workspace glass-panel" style="overflow-y: auto;">
+                <!-- Setup Welcome Interface -->
+                <div id="quizSetupScreen" class="quiz-welcome">
+                    <i class="fas fa-file-pen" style="font-size: 4rem; color: var(--primary); margin-bottom: 1.5rem;"></i>
+                    <h2>AI-Powered Quiz Generator</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 500px;">
+                        Enter a topic below to instantly generate a multiple choice quiz. Review explanations for every answer to reinforce your learning.
+                    </p>
+                    
+                    <div style="display: flex; gap: 0.75rem; width: 100%; max-width: 550px;">
+                        <input type="text" id="quizTopicInput" class="form-control" placeholder="Enter topic (e.g. Calculus Derivatives, Spanish vocabulary)">
+                        <button id="generateQuizBtn" class="btn btn-primary" style="white-space: nowrap;"><i class="fas fa-magic"></i> Generate Quiz</button>
+                    </div>
+                </div>
+
+                <!-- Active Quiz Play Interface -->
+                <div id="quizPlayScreen" class="quiz-container" style="display: none;">
+                    <div class="quiz-header">
+                        <div>
+                            <h3 style="font-weight: 700;" id="quizPlayTopic">Quiz: Chemistry Basics</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);" id="questionTracker">Question 1 of 10</p>
+                        </div>
+                        <div class="quiz-timer">
+                            <i class="fas fa-clock"></i> <span id="timerVal">00:00</span>
+                        </div>
+                    </div>
+
+                    <div class="progress-bar-container">
+                        <div id="progressBarFill" class="progress-bar-fill"></div>
+                    </div>
+
+                    <div class="quiz-question-box">
+                        <div id="quizQuestionText" class="quiz-question-text">Question text here...</div>
+                        
+                        <div id="quizOptionsList" class="quiz-options-list">
+                            <!-- Dynamic option buttons injected -->
+                        </div>
+                        
+                        <!-- Feedback Explanation Banner -->
+                        <div id="quizAnswerFeedback" class="quiz-explanation" style="display: none;">
+                            <strong style="display: block; margin-bottom: 0.25rem;" id="feedbackTitle">Correct!</strong>
+                            <span id="feedbackText">Explanation text here...</span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: flex-end; margin-top: auto;">
+                        <button id="nextQuestionBtn" class="btn btn-primary" style="display: none;">Next Question <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Quiz Results/Summary Interface -->
+                <div id="quizResultScreen" class="quiz-welcome" style="display: none;">
+                    <i class="fas fa-trophy" style="font-size: 4.5rem; color: #f59e0b; margin-bottom: 1.5rem;"></i>
+                    <h2>Quiz Completed!</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Here is your performance summary:</p>
+                    
+                    <div class="glass-panel" style="padding: 1.5rem 3rem; margin-bottom: 2rem; text-align: center;">
+                        <div style="font-size: 3rem; font-weight: 800; color: var(--primary);" id="finalScoreVal">8/10</div>
+                        <div style="font-size: 0.9rem; color: var(--text-muted);" id="finalPercentage">Score: 80%</div>
+                    </div>
+
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 2rem;">Total time taken: <span id="finalTimeVal">01:45</span></p>
+
+                    <div style="display: flex; gap: 1rem;">
+                        <button id="restartQuizBtn" class="btn btn-primary"><i class="fas fa-redo"></i> Try Another Quiz</button>
+                    </div>
+                </div>
+
+                <!-- Loading spinner overlay -->
+                <div id="quizLoadingOverlay" class="loading-overlay" style="display: none;">
+                    <div style="text-align: center;">
+                        <div class="spinner"></div>
+                        <p style="margin-top: 1rem; font-weight: 600;">Generating quiz questions (loading AI model)...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Explain Section -->
+    <div id="explain-section" class="spa-section" style="display: none;">
+        <div class="dashboard-layout">
+            <!-- Left Sidebar Settings -->
+            <div class="workspace-sidebar glass-panel">
+                <h3 style="font-weight: 700; margin-bottom: 1rem;"><i class="fas fa-lightbulb"></i> Explainer Settings</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                    Adapt educational explanations for different learner levels.
+                </p>
+                
+                <div class="input-group">
+                    <label for="complexityLevel">Complexity Level</label>
+                    <select id="complexityLevel" class="form-control">
+                        <option value="simple">Simple (Kid-Friendly)</option>
+                        <option value="medium" selected>Medium (High School/College)</option>
+                        <option value="advanced">Advanced (Deep Technical)</option>
+                    </select>
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                    <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.75rem;">Try These Concepts</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <button class="btn btn-secondary btn-sm" onclick="setConcept('Black Holes')">Black Holes</button>
+                        <button class="btn btn-secondary btn-sm" onclick="setConcept('Inflation (Economics)')">Economic Inflation</button>
+                        <button class="btn btn-secondary btn-sm" onclick="setConcept('Object-Oriented Programming')">OOP (Coding)</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Workspace -->
+            <div class="main-workspace glass-panel" style="overflow-y: auto;">
+                <div class="workspace-header">
+                    <h2>Concept Explainer</h2>
+                    <p>Deconstruct difficult terms and theoretical ideas with level-appropriate explanations, diagrams, and analogies</p>
+                </div>
+
+                <div style="display: flex; gap: 0.75rem; margin-bottom: 2.5rem;">
+                    <input type="text" id="conceptInput" class="form-control" placeholder="Enter a concept (e.g. Cryptography, Photosynthesis, Thermodynamics)">
+                    <button id="explainBtn" class="btn btn-primary" style="white-space: nowrap;"><i class="fas fa-brain"></i> Explain It!</button>
+                </div>
+
+                <!-- Output display container -->
+                <div id="explainerOutput" style="display: none;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;" id="outConcept">Concept Name</h3>
+                        <span id="outBadge" style="padding: 0.25rem 0.75rem; font-size: 0.8rem; font-weight: 600; border-radius: 50px; background-color: var(--primary-light); color: var(--primary); text-transform: uppercase;">Medium</span>
+                    </div>
+
+                    <div class="glass-panel" style="padding: 1.5rem; margin-bottom: 1.5rem; border-left: 4px solid var(--primary);">
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;"><i class="fas fa-book-open"></i> Explanation</h4>
+                        <p id="outExplanation" style="white-space: pre-line; color: var(--text-main);">Explanation goes here...</p>
+                    </div>
+
+                    <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 2rem;">
+                        <!-- Real-life Examples -->
+                        <div class="glass-panel" style="padding: 1.5rem;">
+                            <h4 style="font-weight: 700; color: #10b981; margin-bottom: 1rem;"><i class="fas fa-circle-play"></i> Real-Life Examples</h4>
+                            <ul id="outExamples" style="padding-left: 1.25rem; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                <!-- JS injected -->
+                            </ul>
+                        </div>
+
+                        <!-- Analogies -->
+                        <div class="glass-panel" style="padding: 1.5rem;">
+                            <h4 style="font-weight: 700; color: #f59e0b; margin-bottom: 1rem;"><i class="fas fa-scale-balanced"></i> Analogies</h4>
+                            <ul id="outAnalogies" style="padding-left: 1.25rem; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                <!-- JS injected -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initial Placeholder State -->
+                <div id="explainEmptyState" style="text-align: center; padding: 5rem 0; color: var(--text-muted);">
+                    <i class="fas fa-lightbulb" style="font-size: 4rem; margin-bottom: 1rem; color: var(--border-color);"></i>
+                    <p>Provide a concept and select a level on the left to begin explaining.</p>
+                </div>
+
+                <!-- Loader -->
+                <div id="explainLoadingOverlay" class="loading-overlay" style="display: none;">
+                    <div style="text-align: center;">
+                        <div class="spinner"></div>
+                        <p style="margin-top: 1rem; font-weight: 600;">Analyzing and explaining concept...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Summary Section -->
+    <div id="summary-section" class="spa-section" style="display: none;">
+        <div class="dashboard-layout">
+            <!-- Left Sidebar: Settings -->
+            <div class="workspace-sidebar glass-panel">
+                <h3 style="font-weight: 700; margin-bottom: 1rem;"><i class="fas fa-file-invoice"></i> Summary Settings</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                    Customize the length and format of your study summary.
+                </p>
+
+                <div class="input-group">
+                    <label for="summaryLength">Summary Length</label>
+                    <select id="summaryLength" class="form-control">
+                        <option value="short">Short (1-2 sentences)</option>
+                        <option value="medium" selected>Medium (Cohesive paragraphs)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="summaryFormat">Format Type</label>
+                    <select id="summaryFormat" class="form-control">
+                        <option value="bullet_points" selected>Bullet Points</option>
+                        <option value="paragraph">Paragraphs</option>
+                    </select>
+                </div>
+
+                <div class="input-group" style="flex-direction: row; align-items: center; justify-content: space-between; gap: 1rem;">
+                    <label for="summaryUseLocalT5" style="margin-bottom: 0; cursor: pointer;">
+                        <strong>Local T5 Model</strong><br>
+                        <span style="font-size: 0.75rem; font-weight: normal; color: var(--text-muted);">Process locally on our CPU/GPU</span>
+                    </label>
+                    <input type="checkbox" id="summaryUseLocalT5" style="width: 20px; height: 20px; cursor: pointer;">
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.75rem;">Study Metrics</h4>
+                    <div style="font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-muted);">
+                        <div class="flex-row-between"><span>Input Words:</span><span id="inWordCount">0</span></div>
+                        <div class="flex-row-between"><span>Output Words:</span><span id="outWordCount">0</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Workspace -->
+            <div class="main-workspace glass-panel" style="overflow-y: auto;">
+                <div class="workspace-header">
+                    <h2>Text Summarizer</h2>
+                    <p>Paste notes, chapters, or study guides to extract core summaries, keywords, and study highlights</p>
+                </div>
+
+                <div class="input-group" style="margin-bottom: 1.5rem;">
+                    <label for="textToSummarize">Study Material / Text</label>
+                    <textarea id="textToSummarize" class="form-control" style="height: 200px; resize: vertical;" placeholder="Paste your study notes, essay, or book chapters here... (Minimum 50 words recommended)"></textarea>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; margin-bottom: 2.5rem;">
+                    <button id="summarizeBtn" class="btn btn-primary"><i class="fas fa-compress"></i> Summarize Text</button>
+                </div>
+
+                <!-- Output display container -->
+                <div id="summarizerOutput" style="display: none;">
+                    <div class="glass-panel" style="padding: 1.5rem; margin-bottom: 1.5rem; border-left: 4px solid var(--primary);">
+                        <h4 style="font-weight: 700; margin-bottom: 0.5rem;"><i class="fas fa-compress-arrows-alt"></i> Executive Summary</h4>
+                        <p id="outSummary" style="color: var(--text-main);">Summary description...</p>
+                    </div>
+
+                    <div class="features-grid" style="grid-template-columns: 1.2fr 0.8fr; gap: 1.5rem; margin-bottom: 2rem;">
+                        <!-- Main Bullet Insights -->
+                        <div class="glass-panel" style="padding: 1.5rem;">
+                            <h4 style="font-weight: 700; color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-list-check"></i> Key Insights</h4>
+                            <ul id="outBulletPoints" style="padding-left: 1.25rem; font-size: 0.95rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                <!-- Injected by JS -->
+                            </ul>
+                        </div>
+
+                        <!-- Extracted Keywords -->
+                        <div class="glass-panel" style="padding: 1.5rem;">
+                            <h4 style="font-weight: 700; color: #10b981; margin-bottom: 1rem;"><i class="fas fa-tags"></i> Core Keywords</h4>
+                            <div id="outKeywords" style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                <!-- Injected by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initial Placeholder State -->
+                <div id="summaryEmptyState" style="text-align: center; padding: 5rem 0; color: var(--text-muted);">
+                    <i class="fas fa-file-lines" style="font-size: 4rem; margin-bottom: 1rem; color: var(--border-color);"></i>
+                    <p>Paste notes above and click the button to compress your reading material.</p>
+                </div>
+
+                <!-- Loader -->
+                <div id="summaryLoadingOverlay" class="loading-overlay" style="display: none;">
+                    <div style="text-align: center;">
+                        <div class="spinner"></div>
+                        <p style="margin-top: 1rem; font-weight: 600;">Analyzing and summarizing (loading model if local selected)...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Recommend Section -->
+    <div id="recommend-section" class="spa-section" style="display: none;">
+        <div class="dashboard-layout">
+            <!-- Left Sidebar: Configurations -->
+            <div class="workspace-sidebar glass-panel">
+                <h3 style="font-weight: 700; margin-bottom: 1rem;"><i class="fas fa-route"></i> Roadmap Settings</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                    Adapt learning recommendations to your current experience level.
+                </p>
+
+                <div class="input-group">
+                    <label for="learnerLevel">Learner Level</label>
+                    <select id="learnerLevel" class="form-control">
+                        <option value="beginner" selected>Beginner (No prior knowledge)</option>
+                        <option value="intermediate">Intermediate (Basic principles known)</option>
+                        <option value="advanced">Advanced (Deepen expertise)</option>
+                    </select>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.75rem;">Example Subjects</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <button class="btn btn-secondary btn-sm" onclick="setSubject('Machine Learning')">Machine Learning</button>
+                        <button class="btn btn-secondary btn-sm" onclick="setSubject('Ancient Greek Philosophy')">Greek Philosophy</button>
+                        <button class="btn btn-secondary btn-sm" onclick="setSubject('Microeconomics')">Microeconomics</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Workspace -->
+            <div class="main-workspace glass-panel" style="overflow-y: auto;">
+                <div class="workspace-header">
+                    <h2>Personalized Roadmap Planner</h2>
+                    <p>Generate interactive study plans, books, online courses, and estimated project timelines for any domain</p>
+                </div>
+
+                <div style="display: flex; gap: 0.75rem; margin-bottom: 2.5rem;">
+                    <input type="text" id="subjectInput" class="form-control" placeholder="What subject do you want to master? (e.g. Docker Containers, Piano Basics)">
+                    <button id="recommendBtn" class="btn btn-primary" style="white-space: nowrap;"><i class="fas fa-route"></i> Create Roadmap</button>
+                </div>
+
+                <!-- Output display container -->
+                <div id="recommendationsOutput" style="display: none;">
+                    <!-- Header display -->
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;" id="outSubject">Machine Learning</h3>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <span id="outLevelBadge" style="padding: 0.25rem 0.75rem; font-size: 0.8rem; font-weight: 600; border-radius: 50px; background-color: var(--primary-light); color: var(--primary); text-transform: uppercase;">Beginner</span>
+                        </div>
+                    </div>
+
+                    <!-- Resource Cards section -->
+                    <h4 style="font-weight: 700; margin-bottom: 1rem;"><i class="fas fa-book"></i> Recommended Resources</h4>
+                    <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;" id="resourcesGrid">
+                        <!-- Javascript injects resource cards here -->
+                    </div>
+
+                    <!-- Step by Step Roadmap Timeline -->
+                    <h4 style="font-weight: 700; margin-bottom: 1rem;"><i class="fas fa-timeline"></i> Step-by-Step Learning Timeline</h4>
+                    <div class="roadmap-timeline" id="roadmapTimeline">
+                        <!-- Javascript injects timeline steps here -->
+                    </div>
+                </div>
+
+                <!-- Initial Placeholder State -->
+                <div id="recommendEmptyState" style="text-align: center; padding: 5rem 0; color: var(--text-muted);">
+                    <i class="fas fa-compass" style="font-size: 4rem; margin-bottom: 1rem; color: var(--border-color);"></i>
+                    <p>Input a subject above to plot your AI learning path.</p>
+                </div>
+
+                <!-- Loader -->
+                <div id="recommendLoadingOverlay" class="loading-overlay" style="display: none;">
+                    <div style="text-align: center;">
+                        <div class="spinner"></div>
+                        <p style="margin-top: 1rem; font-weight: 600;">Mapping curriculum and scanning learning materials...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. About Section -->
+    <div id="about-section" class="spa-section" style="display: none;">
+        <div style="max-width: 900px; margin: 0 auto 5rem auto; padding-top: 2rem;">
+            <!-- Brand Header -->
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <i class="fas fa-graduation-cap" style="font-size: 5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                <h1 style="font-size: 2.75rem; font-weight: 800; margin-bottom: 0.5rem;">About EduGenie</h1>
+                <p style="color: var(--text-muted); font-size: 1.15rem;">Intelligent study companion powered by state-of-the-art AI systems</p>
+            </div>
+
+            <!-- Mission Panel -->
+            <div class="glass-panel" style="padding: 2.5rem; margin-bottom: 3rem;">
+                <h2 style="font-weight: 800; font-size: 1.75rem; margin-bottom: 1rem; color: var(--primary);">Our Mission</h2>
+                <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main);">
+                    At EduGenie, we believe that education should be personalized, interactive, and accessible. Our goal is to empower students and lifelong learners around the globe by providing an intelligent companion that can adapt complex concepts to their level of understanding, test their progress dynamically, and outline personalized paths to mastery.
+                </p>
+            </div>
+
+            <!-- Tech Architecture section -->
+            <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                <!-- Card 1 -->
+                <div class="glass-panel" style="padding: 2rem;">
+                    <div style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-cloud"></i></div>
+                    <h3 style="font-weight: 700; margin-bottom: 0.75rem;">Cloud Cognitive Layer</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">
+                        Integrates with Google Gemini API models to run advanced prompt engineering pipelines, generating structured JSON outputs for quizzes, roadmaps, explanations, and replies.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-panel" style="padding: 2rem;">
+                    <div style="font-size: 2rem; color: #10b981; margin-bottom: 1rem;"><i class="fas fa-microchip"></i></div>
+                    <h3 style="font-weight: 700; margin-bottom: 0.75rem;">Local Execution</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">
+                        Leverages local Hugging Face Transformers. Utilizes LaMini-Flan-T5 models running natively in PyTorch on the host server to support offline text summarization.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Join the community -->
+            <div class="glass-panel" style="padding: 2.5rem; text-align: center;">
+                <h2 style="font-weight: 800; font-size: 1.5rem; margin-bottom: 1rem;">Join the Community</h2>
+                <p style="font-size: 0.95rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem auto;">
+                    EduGenie is open-source. Help us expand our local NLP educational models, add more subject paths, and build new question-answering features.
+                </p>
+                <a href="https://github.com" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> Star on GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. Contact Section -->
+    <div id="contact-section" class="spa-section" style="display: none;">
+        <div style="max-width: 800px; margin: 0 auto 5rem auto; padding-top: 2rem;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <i class="fas fa-envelope-open-text" style="font-size: 4.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">Contact EduGenie Support</h1>
+                <p style="color: var(--text-muted);">Have questions or feedback? Drop us a line below and we'll respond within 24 hours.</p>
+            </div>
+
+            <div class="features-grid" style="grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: start;">
+                <!-- Form Panel -->
+                <div class="glass-panel" style="padding: 2rem;">
+                    <form id="contactForm" onsubmit="handleFormSubmission(event)">
+                        <div class="input-group">
+                            <label for="contactName">Full Name</label>
+                            <input type="text" id="contactName" class="form-control" placeholder="Jane Doe" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="contactEmail">Email Address</label>
+                            <input type="email" id="contactEmail" class="form-control" placeholder="jane@example.com" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="contactSubject">Subject</label>
+                            <select id="contactSubject" class="form-control">
+                                <option value="general">General Inquiry</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="feedback">Feedback / Suggestions</option>
+                                <option value="collaboration">Academic Partnership</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" class="form-control" style="height: 120px; resize: vertical;" placeholder="Type your message details here..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-full" style="justify-content: center; height: 48px; font-size: 1rem;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Details Sidebar Panel -->
+                <div class="glass-panel" style="padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div>
+                        <h4 style="font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem;"><i class="fas fa-location-dot" style="color: var(--primary);"></i> Main Office</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">
+                            EduGenie AI Lab<br>
+                            100 Innovation Way, Suite 400<br>
+                            San Francisco, CA 94107
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 style="font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem;"><i class="fas fa-headset" style="color: var(--primary);"></i> Support Channels</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">
+                            General: contact@edugenie.ai<br>
+                            Tech Support: dev@edugenie.ai
+                        </p>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+                        <h4 style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem;">Privacy Policy</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">
+                            We do not sell your personal query data. All conversation context is deleted once history is cleared.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Dynamic Integration Javascript -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const showSpinner = (element) => {
+        element.style.display = "block";
+        element.innerHTML = '<div style="text-align:center; padding:1rem;"><i class="fas fa-circle-notch fa-spin" style="font-size:1.5rem; color:var(--primary);"></i><p style="margin-top:0.5rem; font-size:0.8rem; color:var(--text-muted);">Generating response...</p></div>';
+    };
+
+    // 1. Q&A Form Submission
+    document.getElementById("qaForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const question = document.getElementById("question").value.trim();
+        const resultDiv = document.getElementById("qaResult");
+        showSpinner(resultDiv);
+
+        try {
+            const response = await fetch(`/qa?question=${encodeURIComponent(question)}`);
+            const data = await response.json();
+            if (response.ok) {
+                resultDiv.innerHTML = `<h4 style="font-weight:700; color:#3b82f6; margin-bottom:0.5rem;">Answer:</h4><p style="white-space: pre-wrap;">${data.answer}</p>`;
+            } else {
+                resultDiv.innerHTML = `<p style="color:#ef4444;">Error: ${data.error || "Failed to get answer."}</p>`;
+            }
+        } catch (err) {
+            resultDiv.innerHTML = `<p style="color:#ef4444;">Connection error. Please try again.</p>`;
+        }
+    });
+
+    // 2. Explanation Form Submission
+    document.getElementById("explainForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const topic = document.getElementById("topic").value;
+        const resultDiv = document.getElementById("explanationResult");
+        showSpinner(resultDiv);
+
+        try {
+            const response = await fetch('/explain/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ topic: topic })
+            });
+            const data = await response.json();
+            if (response.ok) {
+                resultDiv.innerHTML = `<h4 style="font-weight:700; color:#a78bfa; margin-bottom:0.5rem;">Explanation for "${data.topic}":</h4><p style="white-space: pre-wrap;">${data.explanation}</p>`;
+            } else {
+                resultDiv.innerHTML = `<p style="color:#ef4444;">Error: ${data.error || "Failed to get explanation."}</p>`;
+            }
+        } catch (err) {
+            resultDiv.innerHTML = `<p style="color:#ef4444;">Connection error. Please try again.</p>`;
+        }
+    });
+
+    // 3. Summary Form Submission
+    document.getElementById("summaryForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const text = document.getElementById("summaryText").value;
+        const resultDiv = document.getElementById("summaryResult");
+        showSpinner(resultDiv);
+
+        try {
+            const response = await fetch('/summarize/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text: text })
+            });
+            const data = await response.json();
+            if (response.ok) {
+                resultDiv.innerHTML = `<h4 style="font-weight:700; color:#ec4899; margin-bottom:0.5rem;">Summary:</h4><p style="white-space: pre-wrap;">${data.summary}</p>`;
+            } else {
+                resultDiv.innerHTML = `<p style="color:#ef4444;">Error: ${data.error || "Failed to get summary."}</p>`;
+            }
+        } catch (err) {
+            resultDiv.innerHTML = `<p style="color:#ef4444;">Connection error. Please try again.</p>`;
+        }
+    });
+
+    // 4. Quiz Form Submission
+    document.getElementById("quizForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const text = document.getElementById("quizText").value;
+        const resultDiv = document.getElementById("quizResult");
+        showSpinner(resultDiv);
+
+        try {
+            const response = await fetch('/quiz', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text: text })
+            });
+            const data = await response.json();
+            if (response.ok) {
+                let quizHtml = `<h4 style="font-weight:700; color:#f59e0b; margin-bottom:0.8rem;">Generated Quiz:</h4>`;
+                data.quiz.forEach((q, idx) => {
+                    quizHtml += `
+                    <div style="margin-bottom:1rem; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:0.8rem;">
+                        <p style="font-weight:600;">Q${idx+1}: ${q.question}</p>
+                        <div style="margin-top:0.4rem; display:flex; flex-direction:column; gap:0.3rem;">
+                            ${q.options.map(opt => `
+                                <button class="quiz-option-btn" onclick="verifyAnswer(this, '${opt}', '${q.answer}')" style="text-align:left; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); padding:0.5rem; border-radius:6px; color:white; cursor:pointer; font-size:0.85rem; transition: all 0.2s;">
+                                    ${opt}
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                    `;
+                });
+                resultDiv.innerHTML = quizHtml;
+            } else {
+                resultDiv.innerHTML = `<p style="color:#ef4444;">Error: ${data.error || "Failed to generate quiz."}</p>`;
+            }
+        } catch (err) {
+            resultDiv.innerHTML = `<p style="color:#ef4444;">Connection error. Please try again.</p>`;
+        }
+    });
+
+    // 5. Learning Path Form Submission
+    document.getElementById("recommendForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const topic = document.getElementById("recommendTopic").value;
+        const resultDiv = document.getElementById("recommendationResult");
+        showSpinner(resultDiv);
+
+        try {
+            const response = await fetch(`/learn/recommendations?topic=${encodeURIComponent(topic)}`);
+            const data = await response.json();
+            if (response.ok) {
+                resultDiv.innerHTML = `<h4 style="font-weight:700; color:#10b981; margin-bottom:0.5rem;">Roadmap for "${data.topic}":</h4><p style="white-space: pre-wrap; font-family: monospace; background:rgba(0,0,0,0.3); padding:0.8rem; border-radius:6px;">${data.recommendation}</p>`;
+            } else {
+                resultDiv.innerHTML = `<p style="color:#ef4444;">Error: ${data.error || "Failed to get roadmap."}</p>`;
+            }
+        } catch (err) {
+            resultDiv.innerHTML = `<p style="color:#ef4444;">Connection error. Please try again.</p>`;
+        }
+    });
+
+});
+
+// Helper function to check quiz option click
+function verifyAnswer(button, selected, correct) {
+    const parent = button.parentElement;
+    const siblingButtons = parent.querySelectorAll(".quiz-option-btn");
+    siblingButtons.forEach(btn => {
+        btn.disabled = true;
+        if (btn.innerText.trim() === correct.trim()) {
+            btn.style.background = "rgba(16, 185, 129, 0.2)";
+            btn.style.borderColor = "#10b981";
+        } else if (btn === button) {
+            btn.style.background = "rgba(239, 68, 68, 0.2)";
+            btn.style.borderColor = "#ef4444";
+        }
+    });
+}
+
+function handleFormSubmission(event) {
+    event.preventDefault();
+    const name = document.getElementById('contactName').value;
+    const email = document.getElementById('contactEmail').value;
+    const subject = document.getElementById('contactSubject').value;
+    
+    alert(`Thank you, ${name}! Your contact request regarding "${subject}" has been submitted mock-successfully. We will contact you at ${email}.`);
+    
+    document.getElementById('contactForm').reset();
+}
+</script>
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.quiz-option-btn:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+.suggested-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+}
+.suggested-tag:hover {
+    background-color: var(--primary);
+    color: white;
+}
+.resource-type-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.5rem;
+}
+.badge-book { background-color: rgba(59, 130, 246, 0.1); color: #2563eb; }
+.badge-course { background-color: rgba(16, 185, 129, 0.1); color: #059669; }
+.badge-practice { background-color: rgba(245, 158, 11, 0.1); color: #d97706; }
+
+.tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition);
+}
+.tab-btn:hover {
+    color: var(--text-main);
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.tab-btn.active.btn-tab-overview {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+}
+.tab-btn.active.btn-tab-chat {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border-color: #3b82f6;
+    color: white;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+}
+.tab-btn.active.btn-tab-quiz {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    border-color: #f59e0b;
+    color: white;
+    box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+}
+.tab-btn.active.btn-tab-explain {
+    background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+    border-color: #a78bfa;
+    color: white;
+    box-shadow: 0 4px 14px rgba(167, 139, 250, 0.4);
+}
+.tab-btn.active.btn-tab-summary {
+    background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+    border-color: #ec4899;
+    color: white;
+    box-shadow: 0 4px 14px rgba(236, 72, 153, 0.4);
+}
+.tab-btn.active.btn-tab-recommend {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border-color: #10b981;
+    color: white;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script src="/static/js/chat.js"></script>
+<script src="/static/js/quiz.js"></script>
+<script src="/static/js/explain.js"></script>
+<script src="/static/js/summary.js"></script>
+<script src="/static/js/recommend.js"></script>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}Concept Explainer - EduGenie AI{% endblock %}
+
+{% block content %}
+<div class="dashboard-layout">
+    <!-- Left Sidebar Settings -->
+    <div class="workspace-sidebar glass-panel">
+        <h3 style="font-weight: 700; margin-bottom: 1rem;"><i class="fas fa-lightbulb"></i> Explainer Settings</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+            Adapt educational explanations for different learner levels.
+        </p>
+        
+        <div class="input-group">
+            <label for="complexityLevel">Complexity Level</label>
+            <select id="complexityLevel" class="form-control">
+                <option value="simple">Simple (Kid-Friendly)</option>
+                <option value="medium" selected>Medium (High School/College)</option>
+                <option value="advanced">Advanced (Deep Technical)</option>
+            </select>
+        </div>
+        
+        <div style="margin-top: 2rem;">
+            <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.75rem;">Try These Concepts</h4>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <button class="btn btn-secondary btn-sm" onclick="setConcept('Black Holes')">Black Holes</button>
+                <button class="btn btn-secondary btn-sm" onclick="setConcept('Inflation (Economics)')">Economic Inflation</button>
+                <button class="btn btn-secondary btn-sm" onclick="setConcept('Object-Oriented Programming')">OOP (Coding)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Workspace -->
+    <div class="main-workspace glass-panel" style="overflow-y: auto;">
+        <div class="workspace-header">
+            <h2>Concept Explainer</h2>
+            <p>Deconstruct difficult terms and theoretical ideas with level-appropriate explanations, diagrams, and analogies</p>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; margin-bottom: 2.5rem;">
+            <input type="text" id="conceptInput" class="form-control" placeholder="Enter a concept (e.g. Cryptography, Photosynthesis, Thermodynamics)">
+            <button id="explainBtn" class="btn btn-primary" style="white-space: nowrap;"><i class="fas fa-brain"></i> Explain It!</button>
+        </div>
+
+        <!-- Output display container -->
+        <div id="explainerOutput" style="display: none;">
+            <div style="margin-bottom: 1.5rem;">
+                <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;" id="outConcept">Concept Name</h3>
+                <span id="outBadge" style="padding: 0.25rem 0.75rem; font-size: 0.8rem; font-weight: 600; border-radius: 50px; background-color: var(--primary-light); color: var(--primary); text-transform: uppercase;">Medium</span>
+            </div>
+
+            <div class="glass-panel" style="padding: 1.5rem; margin-bottom: 1.5rem; border-left: 4px solid var(--primary);">
+                <h4 style="font-weight: 700; margin-bottom: 0.5rem;"><i class="fas fa-book-open"></i> Explanation</h4>
+                <p id="outExplanation" style="white-space: pre-line; color: var(--text-main);">Explanation goes here...</p>
+            </div>
+
+            <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 2rem;">
+                <!-- Real-life Examples -->
+                <div class="glass-panel" style="padding: 1.5rem;">
+                    <h4 style="font-weight: 700; color: #10b981; margin-bottom: 1rem;"><i class="fas fa-circle-play"></i> Real-Life Examples</h4>
+                    <ul id="outExamples" style="padding-left: 1.25rem; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <!-- JS injected -->
+                    </ul>
+                </div>
+
+                <!-- Analogies -->
+                <div class="glass-panel" style="padding: 1.5rem;">
+                    <h4 style="font-weight: 700; color: #f59e0b; margin-bottom: 1rem;"><i class="fas fa-scale-balanced"></i> Analogies</h4>
+                    <ul id="outAnalogies" style="padding-left: 1.25rem; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <!-- JS injected -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Initial Placeholder State -->
+        <div id="emptyState" style="text-align: center; padding: 5rem 0; color: var(--text-muted);">
+            <i class="fas fa-lightbulb" style="font-size: 4rem; margin-bottom: 1rem; color: var(--border-color);"></i>
+            <p>Provide a concept and select a level on the left to begin explaining.</p>
+        </div>
+
+        <!-- Loader -->
+        <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+            <div style="text-align: center;">
+                <div class="spinner"></div>
+                <p style="margin-top: 1rem; font-weight: 600;">Analyzing and explaining concept...</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="/static/js/explain.js"></script>
+{% endblock %}
