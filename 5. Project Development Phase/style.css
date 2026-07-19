@@ -90,8 +90,7 @@ button, input, select, textarea {
 
 .glass-panel:hover {
     box-shadow: var(--shadow-lg);
-    border-color: var(--primary);
-    transform: translateY(-4px);
+    border-color: rgba(37, 99, 235, 0.25);
 }
 
 /* Layout */
@@ -607,18 +606,15 @@ main {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
-    padding: 0.8rem 1rem;
+    padding: 0.75rem 1rem;
     color: var(--text-main);
     width: 100%;
-    font-size: 0.95rem;
     transition: var(--transition);
-    box-shadow: var(--shadow-sm);
 }
 
 .form-control:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px var(--primary-light);
 }
 
 /* Quiz Interface */
@@ -881,30 +877,5 @@ footer {
     }
     .stats-section {
         grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 1100px) and (min-width: 769px) {
-    .nav-links {
-        gap: 0.75rem;
-    }
-    .nav-link {
-        font-size: 0.85rem;
-        padding: 0.4rem 0.6rem;
-    }
-}
-
-.spa-fade-in {
-    animation: spaFadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes spaFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
