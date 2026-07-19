@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}Roadmap & Recommendations - EduGenie AI{% endblock %}
+
+{% block content %}
+<div class="dashboard-layout">
+    <!-- Left Sidebar: Configurations -->
+    <div class="workspace-sidebar glass-panel">
+        <h3 style="font-weight: 700; margin-bottom: 1rem;"><i class="fas fa-route"></i> Roadmap Settings</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+            Adapt learning recommendations to your current experience level.
+        </p>
+
+        <div class="input-group">
+            <label for="learnerLevel">Learner Level</label>
+            <select id="learnerLevel" class="form-control">
+                <option value="beginner" selected>Beginner (No prior knowledge)</option>
+                <option value="intermediate">Intermediate (Basic principles known)</option>
+                <option value="advanced">Advanced (Deepen expertise)</option>
+            </select>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 0.75rem;">Example Subjects</h4>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <button class="btn btn-secondary btn-sm" onclick="setSubject('Machine Learning')">Machine Learning</button>
+                <button class="btn btn-secondary btn-sm" onclick="setSubject('Ancient Greek Philosophy')">Greek Philosophy</button>
+                <button class="btn btn-secondary btn-sm" onclick="setSubject('Microeconomics')">Microeconomics</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Workspace -->
+    <div class="main-workspace glass-panel" style="overflow-y: auto;">
+        <div class="workspace-header">
+            <h2>Personalized Roadmap Planner</h2>
+            <p>Generate interactive study plans, books, online courses, and estimated project timelines for any domain</p>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; margin-bottom: 2.5rem;">
+            <input type="text" id="subjectInput" class="form-control" placeholder="What subject do you want to master? (e.g. Docker Containers, Piano Basics)">
+            <button id="recommendBtn" class="btn btn-primary" style="white-space: nowrap;"><i class="fas fa-route"></i> Create Roadmap</button>
+        </div>
+
+        <!-- Output display container -->
+        <div id="recommendationsOutput" style="display: none;">
+            <!-- Header display -->
+            <div style="margin-bottom: 2rem;">
+                <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;" id="outSubject">Machine Learning</h3>
+                <div style="display: flex; gap: 0.5rem;">
+                    <span id="outLevelBadge" style="padding: 0.25rem 0.75rem; font-size: 0.8rem; font-weight: 600; border-radius: 50px; background-color: var(--primary-light); color: var(--primary); text-transform: uppercase;">Beginner</span>
+                </div>
+            </div>
+
+            <!-- Resource Cards section -->
+            <h4 style="font-weight: 700; margin-bottom: 1rem;"><i class="fas fa-book"></i> Recommended Resources</h4>
+            <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;" id="resourcesGrid">
+                <!-- Javascript injects resource cards here -->
+            </div>
+
+            <!-- Step by Step Roadmap Timeline -->
+            <h4 style="font-weight: 700; margin-bottom: 1rem;"><i class="fas fa-timeline"></i> Step-by-Step Learning Timeline</h4>
+            <div class="roadmap-timeline" id="roadmapTimeline">
+                <!-- Javascript injects timeline steps here -->
+            </div>
+        </div>
+
+        <!-- Initial Placeholder State -->
+        <div id="emptyState" style="text-align: center; padding: 5rem 0; color: var(--text-muted);">
+            <i class="fas fa-compass" style="font-size: 4rem; margin-bottom: 1rem; color: var(--border-color);"></i>
+            <p>Input a subject above to plot your AI learning path.</p>
+        </div>
+
+        <!-- Loader -->
+        <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+            <div style="text-align: center;">
+                <div class="spinner"></div>
+                <p style="margin-top: 1rem; font-weight: 600;">Mapping curriculum and scanning learning materials...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.resource-type-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.5rem;
+}
+.badge-book { background-color: rgba(59, 130, 246, 0.1); color: #2563eb; }
+.badge-course { background-color: rgba(16, 185, 129, 0.1); color: #059669; }
+.badge-practice { background-color: rgba(245, 158, 11, 0.1); color: #d97706; }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script src="/static/js/recommend.js"></script>
+{% endblock %}

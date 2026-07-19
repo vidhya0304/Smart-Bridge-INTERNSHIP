@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Support - EduGenie AI{% endblock %}
+
+{% block content %}
+<div style="max-width: 800px; margin: 0 auto 5rem auto; padding-top: 2rem;">
+    <div style="text-align: center; margin-bottom: 3rem;">
+        <i class="fas fa-envelope-open-text" style="font-size: 4.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+        <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">Contact EduGenie Support</h1>
+        <p style="color: var(--text-muted);">Have questions or feedback? Drop us a line below and we'll respond within 24 hours.</p>
+    </div>
+
+    <div class="features-grid" style="grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: start;">
+        <!-- Form Panel -->
+        <div class="glass-panel" style="padding: 2rem;">
+            <form id="contactForm" onsubmit="handleFormSubmission(event)">
+                <div class="input-group">
+                    <label for="contactName">Full Name</label>
+                    <input type="text" id="contactName" class="form-control" placeholder="Jane Doe" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="contactEmail">Email Address</label>
+                    <input type="email" id="contactEmail" class="form-control" placeholder="jane@example.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="contactSubject">Subject</label>
+                    <select id="contactSubject" class="form-control">
+                        <option value="general">General Inquiry</option>
+                        <option value="technical">Technical Support</option>
+                        <option value="feedback">Feedback / Suggestions</option>
+                        <option value="collaboration">Academic Partnership</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="contactMessage">Message</label>
+                    <textarea id="contactMessage" class="form-control" style="height: 120px; resize: vertical;" placeholder="Type your message details here..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-full" style="justify-content: center; height: 48px; font-size: 1rem;">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </div>
+
+        <!-- Details Sidebar Panel -->
+        <div class="glass-panel" style="padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem;">
+            <div>
+                <h4 style="font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem;"><i class="fas fa-location-dot" style="color: var(--primary);"></i> Main Office</h4>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">
+                    EduGenie AI Lab<br>
+                    100 Innovation Way, Suite 400<br>
+                    San Francisco, CA 94107
+                </p>
+            </div>
+
+            <div>
+                <h4 style="font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem;"><i class="fas fa-headset" style="color: var(--primary);"></i> Support Channels</h4>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">
+                    General: contact@edugenie.ai<br>
+                    Tech Support: dev@edugenie.ai
+                </p>
+            </div>
+
+            <div style="border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+                <h4 style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem;">Privacy Policy</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">
+                    We do not sell your personal query data. All conversation context is deleted once history is cleared.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function handleFormSubmission(event) {
+    event.preventDefault();
+    const name = document.getElementById('contactName').value;
+    const email = document.getElementById('contactEmail').value;
+    const subject = document.getElementById('contactSubject').value;
+    const message = document.getElementById('contactMessage').value;
+    
+    alert(`Thank you, ${name}! Your contact request regarding "${subject}" has been submitted mock-successfully. We will contact you at ${email}.`);
+    
+    document.getElementById('contactForm').reset();
+}
+</script>
+{% endblock %}
